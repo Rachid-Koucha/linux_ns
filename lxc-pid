@@ -1,0 +1,35 @@
+#!/bin/sh
+
+#
+# This script displays the pid of the init process of
+# a busybox container started with lxc-start (not lxc-execute !)
+#
+# It supposes that:
+#       . The monitor daemon is called "[lxc monitor] lxc_path container_name"
+#       . The init process is called: init
+#
+
+if [ $# != 1 ]
+then
+  echo `basename $0` container_name >&2
+  exit 1
+fi
+
+
+MY_ID=`id -u`
+
+INIT_PID=`lxc-info -H -p -n $1 2>/dev/null`
+
+if [ -z "${INIT_PID}" ]
+then echo Unknown container $1 >&2
+     if [ ${MY_ID} -ne 0 ]
+     then echo Try to run this script as super user 2>&1
+     fi
+     exit 1
+else
+  echo ${INIT_PID}
+fi
+
+exit 0
+
+

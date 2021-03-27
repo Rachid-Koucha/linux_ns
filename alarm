@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ $# -lt 1 ]
+then echo Usage: `basename $0` timer message >&2
+     exit 1
+fi 
+
+TIMER=$1
+
+shift
+
+MSG=$*
+
+if [ -z "${MSG}" ]
+then MSG="ALARM"
+fi
+
+sleep ${TIMER}
+
+echo "!!!!! ${MSG} !!!!!"
+
+exit 0

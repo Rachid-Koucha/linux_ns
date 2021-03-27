@@ -1,0 +1,21 @@
+#!/bin/sh
+
+#
+# Create a core file when installed in /proc/sys/kernel/core_pattern
+#
+# The parameters are passed through the "%" specififiers:
+#
+# $1 = Name of the crashing executable
+# $2 = Hostname in the uts_ns where the process crashed
+# $3 = Group identifier of the executable in the initial user_ns
+# $4 = User identifier of the executable in the initial user_ns
+# $5 = Pid of the process in its pid_ns
+# $6 = Pid of the process in the initial pid_ns
+# $7 = Tid of the process in its pid_ns
+# $8 = Tid of the process in the initial pid_ns
+
+# Redirect the input core file into a file
+dd > /tmp/$1_$2_$3_$4_$5_$6_$7_$8.core 2>/dev/null
+
+
+

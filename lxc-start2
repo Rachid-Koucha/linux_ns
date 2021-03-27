@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+if [ $# -ne 1 ]
+then echo "Usage: `basename $0` container_name" >&2
+     exit 1
+fi
+
+lxc-start -n $1 -s lxc.environment=PS1=\\h\#\\x20
