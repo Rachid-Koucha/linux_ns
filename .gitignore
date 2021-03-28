@@ -57,3 +57,6 @@ udpcli
 udpsrv
 userns
 userns_child_exec
+
+# Articles
+*.odt
