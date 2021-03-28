@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#
+# Start a busybox LXC container with the container's name in the shell prompt
+#
 
 if [ $# -ne 1 ]
 then echo "Usage: `basename $0` container_name" >&2

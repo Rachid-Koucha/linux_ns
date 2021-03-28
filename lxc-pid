@@ -1,12 +1,7 @@
 #!/bin/sh
 
 #
-# This script displays the pid of the init process of
-# a busybox container started with lxc-start (not lxc-execute !)
-#
-# It supposes that:
-#       . The monitor daemon is called "[lxc monitor] lxc_path container_name"
-#       . The init process is called: init
+# This script displays the pid of the init process of a LXC container
 #
 
 if [ $# != 1 ]
