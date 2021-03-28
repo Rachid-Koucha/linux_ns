@@ -1,4 +1,10 @@
+/*
+   Utilities for the examples
 
+  Author: R. Koucha
+  Date: 25-Mar-2020
+
+*/
 
 
 #ifndef UTIL_H

@@ -1,4 +1,8 @@
 /*
+   Command to reboot with a given parameter
+
+   Author: R. Koucha
+   Date: 25-Mar-2020
   
 */
 

@@ -439,20 +439,23 @@ int          status;
         // End of 1st child
         exit(0);
 
-      } break;
+      }
+      break;
 
       case -1 : { // Error
 
         ERR("fork(): '%m' (%d)\n", errno);
         return 1;
 
-      } break;
+      }
+      break;
 
       default: { // Father
 
         // Let's continue...
 
-      } break;
+      }
+      break;
 
     } // End switch
 
@@ -497,21 +500,24 @@ int          status;
       ERR("Unable to run '%s': %m (%d)\n", av_cmd[0], errno);
       _exit(1);
 
-    } break;
+    }
+    break;
 
     case -1 : { // Error
 
       ERR("fork(): '%m' (%d)\n", errno);
       return 1;
 
-    } break;
+    }
+    break;
 
     default: {
 
       // Father process, let's continue...
       close(sync2[0]);
 
-    } break;
+    }
+    break;
 
   } // End switch fork()
 
