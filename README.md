@@ -16,6 +16,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[6.8 ownerns](#6_8_ownerns)  
 &nbsp;&nbsp;&nbsp;&nbsp;[6.9 parentns](#6_9_parentns)  
 &nbsp;&nbsp;&nbsp;&nbsp;[6.10 userns](#6_10_userns)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.11 linfo](#6_11_linfo)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.12 setnshost](#6_12_setnshost)  
 
 ## <a name="1_Introduction"></a>1 Introduction
 
@@ -77,6 +79,8 @@ The covers of the published articles are:
 
 ## <a name="6_Utils"></a>6 Description of the utilities
 
+The following simple utilities are used to illustrate the articles serie concerning the Linux namespaces. They are not designed to be used in a larger scope although they may provide some hints to write some more elaborated tools around the Linux namespaces.
+
 ### <a name="6_1_lxc_pid"></a>6.1 lxc-pid
 
 `lxc-pid` is a shell script which retrieves and displays the pid of the _init_ process of a LXC container.
@@ -110,7 +114,8 @@ Type <Ctrl+a q> to exit the console, <Ctrl+a Ctrl+a> to enter Ctrl+a itself
 BusyBox v1.30.1 (Ubuntu 1:1.30.1-4ubuntu4) built-in shell (ash)
 Enter 'help' for a list of built-in commands.
 
-bbox# 
+bbox# <CTRL>+<a>+<q>
+$
 ```
 
 ### <a name="6_3_cmpns"></a>6.3 cmpns
@@ -271,4 +276,55 @@ $ echo $$
 $ sudo ./userns $$
 /proc/7622/ns/user belongs to user: 'root' (0)
 ```
+### <a name="6_11_linfo"></a>6.11 linfo
+
+`linfo` displays information about a symbolink link.
+
+For example:
+```none
+$ ./linfo /proc/$$/ns/mnt
+Symbolic link:
+	Name: /proc/3098/ns/mnt
+	Rights: 0777
+	Device (major/minor): 0x0/0x5
+	Inode: 0x1a284 (107140)
+Target:
+	Name: mnt:[4026531840]
+	Rights: 0444
+	Device (major/minor): 0x0/0x4
+	Inode: 0xf0000000 (4026531840)
+```
+
+
+### <a name="6_12_setnshost"></a>6.12 setnshost
+
+`setnshost` sets the hostname in the uts namespace of a given process
+
+For example, we set the hostname in a LXC container using the pid of its _init_ process:
+```none
+$ sudo lxc-start -n bbox
+$ sudo lxc-console -n bbox -t 0
+Connected to tty 0
+Type <Ctrl+a q> to exit the console, <Ctrl+a Ctrl+a> to enter Ctrl+a itself
+
+BusyBox v1.30.1 (Ubuntu 1:1.30.1-4ubuntu4) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+/ # hostname
+bbox
+/ # <CTRL>+<a>+<q>
+$ sudo ./lxc-pid bbox
+5865
+$ sudo ./setnshost 5865 qwerty
+$ sudo lxc-console -n bbox -t 0
+
+Connected to tty 0
+Type <Ctrl+a q> to exit the console, <Ctrl+a Ctrl+a> to enter Ctrl+a itself
+
+/ # hostname
+qwerty
+/ # <CTRL>+<a>+<q>
+$
+```
+
 
