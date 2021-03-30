@@ -1,4 +1,4 @@
-# Example programs to study linux namespaces
+# Example programs and articles to present linux namespaces
 
 [1 Introduction](#1_Introduction)  
 [2 Maintainers](#2_Maintainers)  
