@@ -58,5 +58,6 @@ udpsrv
 userns
 userns_child_exec
 
-# Articles
+# Articles/libreoffice
 *.odt
+.~lock.*.odt\#

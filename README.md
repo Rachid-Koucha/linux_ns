@@ -1,4 +1,4 @@
-# Example programs and articles to present linux namespaces
+# Articles and accompanying example programs about linux namespaces
 
 [1 Introduction](#1_Introduction)  
 [2 Maintainers](#2_Maintainers)  
@@ -21,15 +21,16 @@
 
 ## <a name="1_Introduction"></a>1 Introduction
 
-The examples programs available here illustrate the articles serie **published in french** for [GNU Linux Magazine France](https://boutique.ed-diamond.com/) presenting the Linux namespaces in details from user to kernel space. They are written with a minimum number of lines to make them easier to understand. Hence, the code may appear not robust (no checks on the return codes, basic algorithmic...).
+The examples programs available here illustrate the articles serie **published in french** in [GNU Linux Magazine France](https://boutique.ed-diamond.com/) presenting the Linux namespaces in details from user to kernel space. They are written with a minimum number of lines to make them easier to understand. Hence, the code may appear not robust (no checks on the return codes, basic algorithmic...).
 
-The articles are first published in the magazine. The list is located [here](https://connect.ed-diamond.com/auteur/Koucha-Rachid). They become available for free after 5 to 6 months (a **pdf** copy is in the _articles_ sub-directory).  At the moment, the articles available for free are:
+The articles are first published in the magazine. The list is located [here](https://connect.ed-diamond.com/auteur/Koucha-Rachid). They become available for free after 4 months and a **pdf** copy is stored in the _articles_ sub-directory:
 
-- [Les namespaces ou l'art de se d&eacute;multiplier](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-239/Les-namespaces-ou-l-art-de-se-demultiplier).
+- [Les namespaces ou l'art de se d&eacute;multiplier](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-239/Les-namespaces-ou-l-art-de-se-demultiplier);
+- [Les utilitaires relatifs aux namespaces](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-240/Les-utilitaires-relatifs-aux-namespaces).
 
 ## <a name="2_Maintainers"></a>2 Maintainers
 
-For any question, please contact [Rachid Koucha](mailto:rachid.koucha@gmail.com)
+For any question or remark, please contact [Rachid Koucha](mailto:rachid.koucha@gmail.com)
 
 ## <a name="3_Download"></a>3 Download
 
