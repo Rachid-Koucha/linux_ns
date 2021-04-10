@@ -66,22 +66,22 @@ $ make clean
 
 The covers of the published articles are:
 
-Issue#239 of July/August 2020:
+- Issue#239 of July/August 2020:
 <p align="left"><a href="articles/linux_namespaces_01.pdf"><img src="covers/article_cover_01.png"></a></p>
 
-Issue#240 of September 2020:
+- Issue#240 of September 2020:
 <p align="left"><a href="articles/linux_namespaces_02.pdf"><img src="covers/article_cover_02.png"></a></p>
 
-Issue#243 of December 2020:
+- Issue#243 of December 2020:
 <p align="left"><img src="covers/article_cover_03.png"></p>
 
-Issue#245 of February 2021:
+- Issue#245 of February 2021:
 <p align="left"><img src="covers/article_cover_04.png"></p>
 
-Issue#246 of March 2021:
+- Issue#246 of March 2021:
 <p align="left"><img src="covers/article_cover_05.png"></p>
 
-Issue#247 of April 2021:
+- Issue#247 of April 2021:
 <p align="left"><img src="covers/article_cover_06.png"></p>
 
 ## <a name="6_Utils"></a>6 Description of the utilities
