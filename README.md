@@ -26,7 +26,8 @@ The examples programs available here illustrate the articles serie **published i
 The articles are first published in the magazine. The list is located [here](https://connect.ed-diamond.com/auteur/Koucha-Rachid). They become available for free after 4 months and a **pdf** copy is stored in the _articles_ sub-directory:
 
 - [Les namespaces ou l'art de se d&eacute;multiplier](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-239/Les-namespaces-ou-l-art-de-se-demultiplier);
-- [Les utilitaires relatifs aux namespaces](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-240/Les-utilitaires-relatifs-aux-namespaces).
+- [Les utilitaires relatifs aux namespaces](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-240/Les-utilitaires-relatifs-aux-namespaces);
+- [Les structures de donn&eacute;es des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-243/les-structures-de-donnees-des-namespaces-dans-le-noyau).
 
 ## <a name="2_Maintainers"></a>2 Maintainers
 
@@ -73,7 +74,7 @@ The covers of the published articles are:
 <p align="left"><a href="articles/linux_namespaces_02.pdf"><img src="covers/article_cover_02.png"></a></p>
 
 - Issue#243 of December 2020:
-<p align="left"><img src="covers/article_cover_03.png"></p>
+<p align="left"><a href="articles/linux_namespaces_03.pdf"><img src="covers/article_cover_03.png"></a></p>
 
 - Issue#245 of February 2021:
 <p align="left"><img src="covers/article_cover_04.png"></p>
