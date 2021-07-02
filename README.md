@@ -85,6 +85,9 @@ The covers of the published articles are:
 - Issue#247 of April 2021:
 <p align="left"><img src="covers/article_cover_06.png"></p>
 
+- Issue#250 of July-August 2021:
+<p align="left"><img src="covers/article_cover_07.png"></p>
+
 ## <a name="6_Utils"></a>6 Description of the utilities
 
 The following simple utilities are used to illustrate the articles serie concerning the Linux namespaces. They are not designed to be used in a larger scope although they may provide some hints to write some more elaborated tools around the Linux namespaces.
