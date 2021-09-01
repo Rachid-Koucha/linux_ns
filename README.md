@@ -18,6 +18,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[6.10 userns](#6_10_userns)  
 &nbsp;&nbsp;&nbsp;&nbsp;[6.11 linfo](#6_11_linfo)  
 &nbsp;&nbsp;&nbsp;&nbsp;[6.12 setnshost](#6_12_setnshost)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.13 fsinfo](#6_13_fsinfo)  
 
 ## <a name="1_Introduction"></a>1 Introduction
 
@@ -27,7 +28,8 @@ The articles are first published in the magazine. The list is located [here](htt
 
 - [Les namespaces ou l'art de se d&eacute;multiplier](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-239/Les-namespaces-ou-l-art-de-se-demultiplier);
 - [Les utilitaires relatifs aux namespaces](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-240/Les-utilitaires-relatifs-aux-namespaces);
-- [Les structures de donn&eacute;es des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-243/les-structures-de-donnees-des-namespaces-dans-le-noyau).
+- [Les structures de donn&eacute;es des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-243/les-structures-de-donnees-des-namespaces-dans-le-noyau);
+- [Le fonctionnement des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-245/le-fonctionnement-des-namespaces-dans-le-noyau).
 
 ## <a name="2_Maintainers"></a>2 Maintainers
 
@@ -77,7 +79,7 @@ The covers of the published articles are:
 <p align="left"><a href="articles/linux_namespaces_03.pdf"><img src="covers/article_cover_03.png"></a></p>
 
 - Issue#245 of February 2021:
-<p align="left"><img src="covers/article_cover_04.png"></p>
+<p align="left"><a href="articles/linux_namespaces_04.pdf"><img src="covers/article_cover_04.png"></a></p>
 
 - Issue#246 of March 2021:
 <p align="left"><img src="covers/article_cover_05.png"></p>
@@ -309,7 +311,7 @@ Target:
 
 ### <a name="6_12_setnshost"></a>6.12 setnshost
 
-`setnshost` sets the hostname in the uts namespace of a given process
+`setnshost` sets the hostname in the uts namespace of a given process.
 
 For example, we set the hostname in a LXC container using the pid of its _init_ process:
 ```none
@@ -338,4 +340,45 @@ qwerty
 $
 ```
 
+### <a name="6_13_fsinfo"></a>6.13 fsinfo
 
+`fsinfo` displays the information about a file system into which a file/directory resides.
+
+To display the information about the root file system on my machine:
+
+```none
+$ ./fsinfo /
+Type             : 0xef53 (EXT2/3/4FS)
+Block size       : 4096
+Total blocks     : 119916557
+Total free blocks: 117922759
+Total files      : 30531584
+Max name length  : 255
+Mount flags      : 0x1020 (REMOUNT BIND)
+```
+
+The following displays the information about the PROCFS file system into which the `ns` directory resides:
+
+```none
+$ ./fsinfo /proc/$$/ns    
+Type             : 0x9fa0 (PROCFS)
+Block size       : 4096
+Total blocks     : 0
+Total free blocks: 0
+Total files      : 0
+Max name length  : 255
+Mount flags      : 0x102e (NODEV NOEXEC NOSUID REMOUNT BIND)
+```
+
+The following displays the information about the NSFS file system into which reside the targets of the symbolic links in the latter directory:
+
+```none
+$ ./fsinfo /proc/$$/ns/mnt
+Type             : 0x6e736673 (NSFS)
+Block size       : 4096
+Total blocks     : 0
+Total free blocks: 0
+Total files      : 0
+Max name length  : 255
+Mount flags      : 0x20 (REMOUNT)
+```
