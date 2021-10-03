@@ -12,28 +12,31 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[6.4 clonens](#6_4_clonens)  
 &nbsp;&nbsp;&nbsp;&nbsp;[6.5 execns](#6_5_execns)  
 &nbsp;&nbsp;&nbsp;&nbsp;[6.6 shns](#6_6_shns)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.7 idns](#6_7_idns)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.8 ownerns](#6_8_ownerns)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.9 parentns](#6_9_parentns)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.10 userns](#6_10_userns)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.11 linfo](#6_11_linfo)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.12 setnshost](#6_12_setnshost)  
-&nbsp;&nbsp;&nbsp;&nbsp;[6.13 fsinfo](#6_13_fsinfo)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.7 shns2](#6_7_shns2)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.8 shns3](#6_8_shns3)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.9 idns](#6_9_idns)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.10 ownerns](#6_10_ownerns)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.11 parentns](#6_11_parentns)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.12 userns](#6_12_userns)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.13 linfo](#6_13_linfo)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.14 setnshost](#6_14_setnshost)  
+&nbsp;&nbsp;&nbsp;&nbsp;[6.15 fsinfo](#6_15_fsinfo)  
 
 ## <a name="1_Introduction"></a>1 Introduction
 
-The examples programs available here illustrate the articles serie **published in french** in [GNU Linux Magazine France](https://boutique.ed-diamond.com/) presenting the Linux namespaces in details from user to kernel space. They are written with a minimum number of lines to make them easier to understand. Hence, the code may appear not robust (no checks on the return codes, basic algorithmic...).
+The examples programs available here illustrate the articles serie **published in french** in [GNU Linux Magazine France](https://boutique.ed-diamond.com/) presenting the Linux namespaces in details from user to kernel space. They are written with a minimum number of lines to make them easier to understand. Hence, the source code may appear not robust (no checks on the return codes, basic algorithmic...).
 
-The articles are first published in the magazine. The list is located [here](https://connect.ed-diamond.com/auteur/Koucha-Rachid). They become available for free after 4 months and a **pdf** copy is stored in the _articles_ sub-directory:
+The articles are first published in the magazine. The list is located [here](https://connect.ed-diamond.com/auteur/Koucha-Rachid). They become available for free after 4 to 6 months and a **pdf** copy is stored in the _articles_ sub-directory:
 
 - [Les namespaces ou l'art de se d&eacute;multiplier](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-239/Les-namespaces-ou-l-art-de-se-demultiplier);
 - [Les utilitaires relatifs aux namespaces](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-240/Les-utilitaires-relatifs-aux-namespaces);
 - [Les structures de donn&eacute;es des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-243/les-structures-de-donnees-des-namespaces-dans-le-noyau);
-- [Le fonctionnement des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-245/le-fonctionnement-des-namespaces-dans-le-noyau).
+- [Le fonctionnement des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-245/le-fonctionnement-des-namespaces-dans-le-noyau);
+- [Identité multiple avec le namespace user](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-246/identite-multiple-avec-le-namespace-user).
 
 ## <a name="2_Maintainers"></a>2 Maintainers
 
-For any question or remark, please contact [Rachid Koucha](mailto:rachid.koucha@gmail.com)
+For any question or remark, please contact [me](mailto:rachid.koucha@gmail.com)
 
 ## <a name="3_Download"></a>3 Download
 
@@ -82,7 +85,7 @@ The covers of the published articles are:
 <p align="left"><a href="articles/linux_namespaces_04.pdf"><img src="covers/article_cover_04.png"></a></p>
 
 - Issue#246 of March 2021:
-<p align="left"><img src="covers/article_cover_05.png"></p>
+<p align="left"><a href="articles/linux_namespaces_05.pdf"><img src="covers/article_cover_05.png"></a></p>
 
 - Issue#247 of April 2021:
 <p align="left"><img src="covers/article_cover_06.png"></p>
@@ -210,7 +213,7 @@ program's status: 0 (0x0)
 ```
 ### <a name="6_6_shns"></a>6.6 shns
 
-`shns` creates shell in the namespaces specified as parameters.
+`shns` creates a shell in the namespaces specified as parameters.
 
 For example:
 ```none
@@ -228,7 +231,53 @@ SHNS# exit
 /bin/sh: 5: Cannot set tty process group (No such process)
 program's status: 0 (0x0)
 ```
-### <a name="6_7_idns"></a>6.7 idns
+### <a name="6_7_shns2"></a>6.7 shns2
+
+Like `shns`, `shns2` creates a shell in the namespaces specified as parameters. But it prompts the user just before the execution of the shell.
+
+For example:
+```none
+$ PS1='SHNS$ ' ./shns2 ipc uts mnt user
+New namespace 'ipc'
+New namespace 'user'
+New namespace 'uts'
+New namespace 'mnt'
+Process#15706 go forward ([Y]/N)? 
+```
+### <a name="6_8_shns3"></a>6.8 shns3
+
+`shns3` is the synthesis of `shns` and `shns2`. The usage is:
+```none
+$ ./shns3 -h
+Usage: shns3 [-h] [-d level] [-n nsname] [-u uidmap] [-g gidmap] [-s path]
+  -h|--help            : This help
+  -h|--debug level     : Debug level
+  -n|--nspc nsname     : Create namespace
+                         'nsname' is: cgroup|ipc|net|mnt|pid|user|uts
+  -u|--umap uidmap     : User id mapping
+                         'uidmap' is 'uid loweruid count'
+  -g|--gmap gidmap     : Group id mapping
+                         'gidmap' is 'gid lowergid count'
+  -s|--shell path      : Execute shell
+                         'path' is '/bin/sh' by default
+```
+The namespaces to create are passed with the `--nspc` option. The user ids and group ids mappings are respectively passed through the `--umap` and `--gmap` options. For example:
+```none
+$ ./shns3 -u '0 1000 1' -u '1 100000 100' -g '0 1000 1' -g '1 100000 100' -d 1
+DEBUG_1 (main#358): New namespace 'ipc'
+DEBUG_1 (main#358): New namespace 'pid'
+DEBUG_1 (main#358): New namespace 'net'
+DEBUG_1 (main#358): New namespace 'user'
+DEBUG_1 (main#358): New namespace 'uts'
+DEBUG_1 (main#358): New namespace 'cgroup'
+DEBUG_1 (main#358): New namespace 'mnt'
+DEBUG_1 (main#409): Running 'newuidmap 7565 0 1000 1 1 100000 100'...
+DEBUG_1 (main#424): Running 'newgidmap 7565 0 1000 1 1 100000 100'...
+# id
+uid=0(root) gid=0(root) groups=0(root),65534(nogroup)
+#
+```
+### <a name="6_9_idns"></a>6.9 idns
 
 `idns` displays the identifiers of one or more namespaces of a given process. By default, all
 the namespaces are considered.
@@ -247,7 +296,7 @@ $ sudo ./idns $$ uts ipc
 /proc/7622/ns/uts [Device,Inode]: [4,4026531838]
 /proc/7622/ns/ipc [Device,Inode]: [4,4026531839]
 ```
-### <a name="6_8_ownerns"></a>6.8 ownerns
+### <a name="6_10_ownerns"></a>6.10 ownerns
 
 `ownerns` displays the user_ns owning a the namespaces of a given process.
 
@@ -263,7 +312,7 @@ $ sudo ./ownerns $$
 ERROR@main#87: ioctl(/proc/7622/ns/user, NS_GET_USERNS): 'Operation not permitted' (1)
 ```
 
-### <a name="6_9_parentns"></a>6.9 parentns
+### <a name="6_11_parentns"></a>6.11 parentns
 
 `parentns` displays the parent namespace of a the namespaces of a given process. This works only for
 hierarchical namespaces (i.e. _pid_ns_ and _user_ns_).
@@ -278,7 +327,7 @@ ERROR@main#89: ioctl(/proc/14857/ns/user, NS_GET_PARENT): 'Operation not permitt
 ```
 In the above display, there is an error for the user_ns as a privileged container runs in the user_ns as the host. And it is not possible to get the parent user namespace of the initial user_ns.
 
-### <a name="6_10_userns"></a>6.10 userns
+### <a name="6_12_userns"></a>6.12 userns
 
 `userns` displays the name and the user identifier of the user which created the user namespaces of a given process.
 
@@ -289,7 +338,7 @@ $ echo $$
 $ sudo ./userns $$
 /proc/7622/ns/user belongs to user: 'root' (0)
 ```
-### <a name="6_11_linfo"></a>6.11 linfo
+### <a name="6_13_linfo"></a>6.13 linfo
 
 `linfo` displays information about a symbolink link.
 
@@ -309,7 +358,7 @@ Target:
 ```
 
 
-### <a name="6_12_setnshost"></a>6.12 setnshost
+### <a name="6_14_setnshost"></a>6.14 setnshost
 
 `setnshost` sets the hostname in the uts namespace of a given process.
 
@@ -340,7 +389,7 @@ qwerty
 $
 ```
 
-### <a name="6_13_fsinfo"></a>6.13 fsinfo
+### <a name="6_15_fsinfo"></a>6.15 fsinfo
 
 `fsinfo` displays the information about a file system into which a file/directory resides.
 
