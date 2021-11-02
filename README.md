@@ -32,7 +32,8 @@ The articles are first published in the magazine. The list is located [here](htt
 - [Les utilitaires relatifs aux namespaces](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-240/Les-utilitaires-relatifs-aux-namespaces);
 - [Les structures de donn&eacute;es des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/GLMF-243/les-structures-de-donnees-des-namespaces-dans-le-noyau);
 - [Le fonctionnement des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-245/le-fonctionnement-des-namespaces-dans-le-noyau);
-- [Identité multiple avec le namespace user](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-246/identite-multiple-avec-le-namespace-user).
+- [Identité multiple avec le namespace user](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-246/identite-multiple-avec-le-namespace-user);
+- [A la découverte des namespaces mount et uts](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-247/a-la-decouverte-des-namespaces-mount-et-uts);
 
 ## <a name="2_Maintainers"></a>2 Maintainers
 
@@ -88,7 +89,7 @@ The covers of the published articles are:
 <p align="left"><a href="articles/linux_namespaces_05.pdf"><img src="covers/article_cover_05.png"></a></p>
 
 - Issue#247 of April 2021:
-<p align="left"><img src="covers/article_cover_06.png"></p>
+<p align="left"><a href="articles/linux_namespaces_06.pdf"><img src="covers/article_cover_06.png"></a></p>
 
 - Issue#250 of July-August 2021:
 <p align="left"><img src="covers/article_cover_07.png"></p>
