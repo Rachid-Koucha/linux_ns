@@ -230,16 +230,16 @@ static void usage(char *cmd)
   fprintf(stderr,
           "Usage: %s [-h] [-d level] [-n nsname] [-u uidmap] [-g gidmap] [-s path]\n"
           "\n"
-          "  -h|--help            : This help\n"
-          "  -h|--debug level     : Set debug to 'level'\n"
-          "  -n|--nspc nsname     : Create namespace 'nsname'\n"
-          "                         'nsname' is: cgroup|ipc|net|mnt|pid|user|uts\n"
-          "  -u|--umap uidmap     : User id mapping\n"
-          "                         'uidmap' is 'uid loweruid count'\n"
-          "  -g|--gmap gidmap     : Group id mapping\n"
-          "                         'gidmap' is 'gid lowergid count'\n"
-          "  -s|--shell path      : Execute shell\n"
-          "                         'path' is '%s' by default\n"
+          "  -h|--help        : This help\n"
+          "  -d|--debug level : Set debug to 'level'\n"
+          "  -n|--nspc nsname : Create namespace 'nsname'\n"
+          "                     'nsname' is: cgroup|ipc|net|mnt|pid|user|uts\n"
+          "  -u|--umap uidmap : User id mapping\n"
+          "                     'uidmap' is 'uid loweruid count'\n"
+          "  -g|--gmap gidmap : Group id mapping\n"
+          "                     'gidmap' is 'gid lowergid count'\n"
+          "  -s|--shell path  : Execute shell\n"
+          "                     'path' is '%s' by default\n"
           ,
           basename(cmd),
           DEFAULT_CMD
@@ -249,17 +249,17 @@ static void usage(char *cmd)
 
 int main(int ac, char *av[])
 {
-pid_t        child1, child2;
-int          i, rc;
-int          flags;
-int          opt;
-char        *shell = DEFAULT_CMD;
-char       **umap;
-int          numap;
-char       **gmap;
-int          ngmap;
-int          sync1[2],  sync2[2];
-int          status;
+pid_t   child1, child2;
+int     i, rc;
+int     flags;
+int     opt;
+char   *shell = DEFAULT_CMD;
+char  **umap;
+int     numap;
+char  **gmap;
+int     ngmap;
+int     sync1[2],  sync2[2];
+int     status;
 
   umap = gmap = (char **)0;
   numap = ngmap = 0;
