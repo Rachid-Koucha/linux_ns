@@ -34,6 +34,7 @@ The articles are first published in the magazine. The list is located [here](htt
 - [Le fonctionnement des namespaces dans le noyau](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-245/le-fonctionnement-des-namespaces-dans-le-noyau);
 - [Identité multiple avec le namespace user](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-246/identite-multiple-avec-le-namespace-user);
 - [A la découverte des namespaces mount et uts](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-247/a-la-decouverte-des-namespaces-mount-et-uts);
+- [Les bizarreries de l'isolation des IPC](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-250/les-bizarreries-de-l-isolation-des-ipc);
 - [Les namespaces network et pid](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-256/les-namespaces-network-et-pid).
 
 ## <a name="2_Maintainers"></a>2 Maintainers
