@@ -94,7 +94,7 @@ The covers of the published articles are:
 <p align="left"><a href="articles/linux_namespaces_06.pdf"><img src="covers/article_cover_06.png"></a></p>
 
 - Issue#250 of July-August 2021:
-<p align="left"><img src="covers/article_cover_07.png"></p>
+<p align="left"><a href="articles/linux_namespaces_07.pdf"><img src="covers/article_cover_07.png"></a></p>
 
 - Issue#256 of March-April 2022:
 <p align="left"><img src="covers/article_cover_08.png"></p>
