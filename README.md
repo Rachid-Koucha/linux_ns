@@ -35,7 +35,8 @@ The articles are first published in the magazine. The list is located [here](htt
 - [Identité multiple avec le namespace user](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-246/identite-multiple-avec-le-namespace-user);
 - [A la découverte des namespaces mount et uts](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-247/a-la-decouverte-des-namespaces-mount-et-uts);
 - [Les bizarreries de l'isolation des IPC](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-250/les-bizarreries-de-l-isolation-des-ipc);
-- [Les namespaces network et pid](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-256/les-namespaces-network-et-pid).
+- [Les namespaces network et pid](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmf-256/les-namespaces-network-et-pid);
+- [Le namespace cgroup ne sera pas le dernier de la lign&eacute;e](https://connect.ed-diamond.com/gnu-linux-magazine/glmf-258/le-namespace-cgroup-ne-sera-pas-le-dernier-de-la-lignee).
 
 ## <a name="2_Maintainers"></a>2 Maintainers
 
@@ -98,6 +99,9 @@ The covers of the published articles are:
 
 - Issue#256 of March-April 2022:
 <p align="left"><img src="covers/article_cover_08.png"></p>
+
+- Issue#258 of July-August 2022:
+<p align="left"><img src="covers/article_cover_09.png"></p>
 
 ## <a name="6_Utils"></a>6 Description of the utilities
 
